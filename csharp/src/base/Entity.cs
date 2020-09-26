@@ -14,7 +14,7 @@ namespace ECSDemo
             Name = name;
         }
 
-        public void AddComponent<T>(T comp, string name = null) where T: BaseComponent
+        public void AddComponent<T>(T comp, string name = null) where T : BaseComponent
         {
             if (name == null)
                 name = comp.GetType().Name;
@@ -23,18 +23,19 @@ namespace ECSDemo
             comp.Owner = this;
         }
 
-        public T GetComponent<T>(string name) where T: BaseComponent
+        public T GetComponent<T>(string name) where T : BaseComponent
         {
             return components[name] as T;
         }
 
-        public T FindComponentByType<T>() where T: BaseComponent
+        public T FindComponentByType<T>() where T : BaseComponent
         {
             foreach (var item in components)
             {
                 if (item.Value is T asT)
                     return asT;
             }
+
             return null;
         }
 

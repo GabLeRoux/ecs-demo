@@ -8,7 +8,8 @@ namespace ECSDemo
 
             foreach (var e in EntityManager.Entities)
             {
-                e.Walk((comp, name) => {
+                e.Walk((comp, name) =>
+                {
                     if (comp is ILogicComponent logicComp)
                         logicComp.Update(delta);
                 });

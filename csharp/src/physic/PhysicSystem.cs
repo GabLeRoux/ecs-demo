@@ -15,7 +15,7 @@ namespace ECSDemo
 
         TimeSpan step = TimeSpan.FromMilliseconds(1);
         TimeSpan remaining = TimeSpan.Zero;
-                                
+
         public void Tick()
         {
             var motionComps = new List<MotionComponent>();
@@ -23,7 +23,8 @@ namespace ECSDemo
 
             foreach (var e in EntityManager.Entities)
             {
-                e.Walk((comp, name) => {
+                e.Walk((comp, name) =>
+                {
                     if (comp is MotionComponent motion)
                         motionComps.Add(motion);
                     if (comp is MagnetComponent magnet)
@@ -55,7 +56,7 @@ namespace ECSDemo
                 Debug.Assert(posComp != null);
                 Debug.Assert(motionComp != null);
 
-                objProps[m] = new AccelMassInfo{ mass = massComp, pos = posComp, motion = motionComp };
+                objProps[m] = new AccelMassInfo {mass = massComp, pos = posComp, motion = motionComp};
             }
 
             foreach (var m in magnetComps)

@@ -2,7 +2,7 @@ namespace ECSDemo
 {
     struct Point2D
     {
-        public static Point2D Zero = new Point2D { x = 0, y = 0 };
+        public static Point2D Zero = new Point2D {x = 0, y = 0};
 
         public double x;
         public double y;
@@ -18,7 +18,7 @@ namespace ECSDemo
             return $"({x};{y})";
         }
 
-        public static Point2D operator + (Point2D p, Vector2D v)
+        public static Point2D operator +(Point2D p, Vector2D v)
         {
             return new Point2D(p.x + v.x, p.y + v.y);
         }

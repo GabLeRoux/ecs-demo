@@ -19,9 +19,7 @@ namespace ECSDemo
             foreach (var e in EntityManager.Entities)
             {
                 Console.WriteLine($"Entity {e.Name}");
-                e.Walk((comp, name) => {
-                    Console.WriteLine($"  {name,-10}: {comp.ToString()}");
-                });
+                e.Walk((comp, name) => { Console.WriteLine($"  {name,-10}: {comp.ToString()}"); });
             }
 
             Console.WriteLine("=== END DEBUG ===");
